@@ -12,7 +12,7 @@ require_once "../config/conexion.php";
 $mensaje = "";
 $tipo_mensaje = "";
 
-// PROCESAR REGISTRO DE NUEVO CLIENTE (Adaptado a las columnas exactas de phpMyAdmin)
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["registrar_cliente"])) {
     $documento = trim($_POST["documento"] ?? '');
     $nombre = trim($_POST["nombre"] ?? '');
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["registrar_cliente"]))
     }
 }
 
-// OBTENER CLIENTES REALES DE LA BASE DE DATOS
+
 $clientes_db = [];
 try {
     $resultado = $conexion->query("SELECT * FROM clientes ORDER BY id_cliente DESC");
@@ -82,7 +82,7 @@ if (isset($_GET["cerrar_sesion"])) {
 
 <div class="contenedor-dashboard">
 
-    <!-- MENU LATERAL -->
+
     <aside class="menu-lateral">
         <h2>◇ Jewelry Manager</h2>
         <nav>
@@ -117,7 +117,7 @@ if (isset($_GET["cerrar_sesion"])) {
             </div>
         <?php endif; ?>
 
-        <!-- FORMULARIO DE REGISTRO DE CLIENTE -->
+        
         <section class="modal-cliente">
             <h2 style="color: #0b2545; margin-bottom: 15px;">Registrar nuevo cliente</h2>
             <form action="clientes.php" method="POST">
@@ -154,7 +154,7 @@ if (isset($_GET["cerrar_sesion"])) {
             </form>
         </section>
 
-        <!-- TABLA DE CLIENTES REALES -->
+        
         <section class="tabla-productos">
             <h2>Listado de clientes registrados</h2>
             <table>
